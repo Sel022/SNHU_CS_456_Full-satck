@@ -47,7 +47,7 @@ export class EditTripComponent implements OnInit {
       description: ['', Validators.required]
     })
 
-    this.tripDataService.getTrips(tripCode)
+    this.tripDataService.getTrip(tripCode)
       .subscribe({
         next: (value: any) => {
           this.trip = value;
@@ -74,7 +74,7 @@ export class EditTripComponent implements OnInit {
         .subscribe({
           next: (value: any) => {
             console.log(value);
-            this.router.navigate(['']);
+            this.router.navigate(['list-trips']);
           },
           error: (error: any) => {
             console.log('Error: ' + error);
